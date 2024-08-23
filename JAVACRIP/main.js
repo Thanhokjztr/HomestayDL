@@ -1,9 +1,9 @@
 const images = [
-    '../IMAGES/Nen-1.webp',
-    '../IMAGES/Nen-2.webp',
-    '../IMAGES/Nen-3.webp',
-    '../IMAGES/Nen-4.webp',
-    '../IMAGES/Nen-5.webp'
+    'IMAGES/Nen-1.webp',
+    'IMAGES/Nen-2.webp',
+    'IMAGES/Nen-3.webp',
+    'IMAGES/Nen-4.webp',
+    'IMAGES/Nen-5.webp'
 ];
 
 let tmp = 0;
