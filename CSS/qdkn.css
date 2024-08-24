@@ -31,8 +31,16 @@ ol, ul {
 }
 
 #linkchi {
-    font-size: 30px;
+    font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: lightslategray;
+    /* color: lightslategray; */
     font-weight: bolder;
+}
+
+#linkchi a {
+    color: black;
+}
+
+#linkchi a:hover {
+    color: lightslategray;
 }
