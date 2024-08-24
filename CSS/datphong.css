@@ -15,6 +15,12 @@
     justify-content: space-between;
 }
 
+.flex1{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .Gotop {
     position: fixed;
     bottom: 20px;
@@ -149,13 +155,13 @@ ul.submenu li:hover {
     opacity: 1;
 }
 
+.sub:hover #a1{
+    color: black;
+}
+
 #a1 {
     font-size: 200%;
     color: white;
-}
-
-#a1:hover {
-    color: black;
 }
 
 .tmp #a2 {
@@ -209,7 +215,27 @@ ul.submenu li:hover {
 
 .datphongs{
     background-color: rgb(236, 236, 236);
-    padding: 5% 20%;
-    margin: 0% 3%; 
-    display: block;
+    padding: 5% 2%;
+    margin: 0% 1%; 
+}
+
+span{
+    font-size: 24px;
+}
+
+input {
+    width: 500px; 
+    height: 45px; 
+    font-size: 20px;  
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid #c6c4c4; 
+    border-radius: 5px;
+}
+
+#dat{
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

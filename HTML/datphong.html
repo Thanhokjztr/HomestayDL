@@ -38,28 +38,38 @@
         </div>
         <script src="../JAVACRIP/main2.js"></script>
     </header>
-    <main>    
-        <div class="datphongs"> 
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <input type="text" placeholder="Gmail..."/>
-            <input type="text" placeholder="Ho ten..."/>
-            <input type="text" placeholder="ngay/thang/nam.."/>
-            <input type="text" placeholder="ngay/thang/nam.."/>
-            <input list="web-dev" name="web-dev" id="webDev">
-            <datalist id="web-dev">
-                <option value="HTML"></option>
-                <option value="CSS"></option>
-                <option value="JavaScript"></option>
-                <option value="jQuery"></option>
-            </datalist>
-            <input type="submit">   
+    <main class="datphongs">   
+        <div class="flex1 wrap">
+            <div>
+                <span>Email </span><br/><input type="text" placeholder="Gmail..."/>
+            </div>
+            <div>
+                <span>Họ và tên </span><br/><input type="text" placeholder="Ho ten..."/><br/>
+            </div>
+            <div>
+                <span>Số điện thoại </span><br/><input type="text" placeholder="Sdt..."/><br/>
+            </div>
+            <div>
+                <span>Chọn phòng</span><br/>
+                <input list="chonphong">
+                <datalist id="chonphong">
+                    <option value="Le-Petit"></option>
+                    <option value="Villas"></option>
+                    <option value="Grande Suite"></option>
+                    <option value="Bellevue Suite"></option>
+                </datalist><br/>
+            </div>
+            <div>
+                <span>Nhận phòng </span><br/><input type="text" placeholder="ngay/thang/nam.."/><br/>
+            </div>
+            <div>
+                <span>Trả phòng </span><br/><input type="text" placeholder="ngay/thang/nam.."/><br/>
+            </div>
+        </div> 
+        <input id="dat" type="submit" value="Đặt">
+    </main>
+    <foot>
+
+    </foot>
 </body>
 </html>
