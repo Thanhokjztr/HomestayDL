@@ -21,3 +21,5 @@ setInterval(Thaydoinen, 3000);
 
 // Đặt hình nền ban đầu
 Thaydoinen();
+
+// Hình nền riêng cho index

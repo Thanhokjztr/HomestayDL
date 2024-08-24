@@ -7,3 +7,5 @@ document.addEventListener('DOMContentLoaded', function() {
         button.style.display = 'none'; // Ẩn nút sau khi bấm
     });
 });
+
+// Nút bấm video

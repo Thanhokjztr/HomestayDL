@@ -92,8 +92,8 @@ ul.menu1 {
 }
 
 .submenu {
-    visibility: hidden;
     position: absolute;
+    visibility: hidden;/* Ẩn luôn tại vùng đó */
     transition: opacity 1s;
     opacity: 0;
     display: block;
@@ -138,21 +138,24 @@ ul.submenu li:hover {
     color: black;
 }
 
-
-.sub:hover .submenu{
+.submenu.visible {
+    visibility: visible; /* Hiển thị menu */
+    opacity: 1; /* Hiển thị đầy đủ khi menu có lớp visible */
+}
+/* .sub:hover .submenu{
     visibility: visible;
     opacity: 1;
-}
+} */
 
 #a1 {
     font-size: 200%;
     color: white;
 }
 
-#a1:hover {
+/* #a1:hover {
     color: black;
     font-size: 220%;
-}
+} */
 
 .tmp #a2 {
     font-size: 200%;
