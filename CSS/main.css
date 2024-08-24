@@ -9,16 +9,23 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: rgba(0, 0, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.Gotop a {
+    background-color: rgba(112, 241, 121, 0.8);
     color: white;
     text-decoration: none;
     border-radius: 50%;
     padding: 10px 20px;
     font-size: 16px;
-    z-index: 1000;
+    margin-bottom: 20px;
+    animation: shake 1s infinite;
 }
 
-.Gotop:hover {
+.Gotop a:hover {
     background-color: #0056b3;
 }
 
@@ -155,11 +162,12 @@ ul.submenu li:hover {
     margin: 0;
     white-space: nowrap;
     padding: 30px;
+    animation: blink 2s infinite, colorChange 3s infinite;
     /* border: 1px solid red; */
 }
 #a2:hover {
     background-color: rgba(112, 241, 121, 0.4);
-    color: black;
+    /* color: black; */
 }
 
 #div2 {
@@ -172,13 +180,14 @@ ul.submenu li:hover {
     padding: 0;
     margin: auto;
     margin-top: 15%;
+    text-shadow: blue 0.1em 0.1em 0.2em;
     /* border: 1px solid red; */
 }
 
 #p2 {
     text-align: center;
     font-size: 20px;
-    margin: 0;
+    margin: 10px;
     padding: 0;
 }
 
@@ -194,7 +203,6 @@ ul.submenu li:hover {
     text-decoration: none;
     font-size: 50px;
     background-color: rgba(0, 0, 0, 0);
-    color: white;
 }
 
 #video1 {
@@ -423,6 +431,14 @@ footer div {
 
 }
 
+.footer1 {
+    background-color: #00ff22;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    border: 0.01px solid rgba(0, 0, 0, 0);
+}
+
 footer a {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: lightslategray;
@@ -430,4 +446,60 @@ footer a {
 
 footer a:hover {
     font-size: 110%;
+}
+
+#face a{
+    font-size: 30px;
+    /* border: 1px solid red; */
+    display: inline-block;
+    margin: 10px;
+}
+
+#face1 {
+    color: blue;
+}
+
+#ytb {
+    color: red;
+}
+
+#tt {
+    color: black;
+}
+
+#face a:hover {
+    background-color: darkgray;
+    border-radius: 50%;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    20% { opacity: 0.8; }
+    40% { opacity: 0.6; }
+    60% { opacity: 0.4;}
+    80% { opacity: 0.2;}
+    /* 100% { opacity: 0; } */
+}
+
+@keyframes colorChange {
+    0% { color: red; }
+    20% { color: blue; }
+    40% { color: green; }
+    60% { color: yellow; }
+    80% { color: pink; }
+    100% { color: black; }
 }
