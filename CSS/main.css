@@ -336,7 +336,7 @@ section.sec3 div {
     line-height: 200%;
 }
 
-.dichvu:hover .xemthem {
+.dichvu:hover .xemthem a {
     visibility: visible;
     background-color: rgba(47, 79, 79, 0.4);
     color: white;
@@ -366,7 +366,11 @@ section.sec3 div {
     display: block;
 }
 
-.xemthem:hover {
+.xemthem a {
+    padding: 20px;
+}
+
+.xemthem:hover a{
     color: black;
     background-color: rgba(112, 241, 121, 0.4) !important;
 }
