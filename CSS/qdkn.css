@@ -29,3 +29,10 @@ ol, ul {
 #background {
     background-size: cover;
 }
+
+#linkchi {
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: lightslategray;
+    font-weight: bolder;
+}
