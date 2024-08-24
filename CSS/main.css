@@ -395,7 +395,8 @@ footer div {
 }
 
 footer a {
-    color: blue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: lightslategray;
 }
 
 footer a:hover {
