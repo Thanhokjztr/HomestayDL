@@ -15,13 +15,13 @@
 }
 
 .Gotop a {
-    background-color: rgba(0, 0, 255, 0.4);
+    background-color: rgba(112, 241, 121, 0.8);
     color: white;
     text-decoration: none;
     border-radius: 50%;
     padding: 10px 20px;
     font-size: 16px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     animation: shake 1s infinite;
 }
 
@@ -429,8 +429,8 @@ footer div {
 
 }
 
-footer {
-    background-color: #00ff66;
+.footer1 {
+    background-color: #00ff22;
     padding: 0;
     margin: 0;
     border-radius: 5px;
@@ -444,6 +444,18 @@ footer a {
 
 footer a:hover {
     font-size: 110%;
+}
+
+#face a{
+    font-size: 30px;
+    /* border: 1px solid red; */
+    display: inline-block;
+    margin: 10px;
+    color: #22eb10;
+}
+
+#face a:hover {
+    color: blue;
 }
 
 @keyframes shake {
