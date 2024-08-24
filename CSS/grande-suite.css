@@ -4,12 +4,15 @@
     margin-top: 20%;
 }
 
+.wrap{
+    flex-wrap: wrap;
+}
+
 .flex
 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .Gotop {
@@ -204,13 +207,6 @@ ul.submenu li:hover {
     color: black;
 }
 
-
-
-/* main{
-    margin-top: 3rem;
-    margin-left: 2rem;  
-} */
-
 main{
     margin-top: 3rem;
     margin-left: 2rem;  
@@ -238,17 +234,89 @@ main > p{
     text-align: center;
 }
 
-main > div{
-    font-family: monospace;
-    font-size: 22px;
-    padding-left: 5%;
-    padding-right: 5%;
-    text-align: center;
-    
-}
-
 .arrow{
     font-size: 20px;
+}
+
+#le-petit{
+    width: 50%;
+    width: 750px;
+    margin-top: 4rem;
+}
+
+#gioithieu{
+    width: 50%;
+    color: rgb(114, 98, 78);
+    margin-left: 2rem;
+    margin-right: 4rem;
+    font-size: 30px;
+    font-family: monospace; 
+}
+
+.thongtin{
+    background-color: rgb(100, 183, 23);
+    margin-top: 8rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    color: aliceblue;
+    padding-bottom: 3rem;
+}
+
+.thongtin > p:first-child{
+    padding-top: 2rem;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 55px;
+}
+
+.thongtin > p{
+    margin-top: 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+.icon{
+    font-size: 55px;
+    color: rgb(100, 183, 23);
+    background-color: white;
+    border-radius: 100px;
+    padding: 1.5rem 1.5rem;
+    margin: 1rem 2rem;
+}
+
+.indam{
+    font-weight: bolder;
+}
+
+.mono{
+    font-family: monospace;
+}
+
+.tienichs{
+    display: flex;
+}
+
+.tienich{
+    font-size: 20px;
+}
+
+.left{
+    width: 40%;
+    border-right: solid 3px;
+}
+
+.right{
+    width: 60%;
+    margin-left: 3rem;
+}
+.right > div{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+main > h2{
+    font-size: 50px;
+    text-align: center;
 }
 
 .xemthem{   
@@ -256,20 +324,8 @@ main > div{
     
 }
 
-.chons:hover .chon {
-    top: 40%;
-    left: 22%;
-    right: 22%;
-    text-align: center;
-}
-
-.phongnghi{
-    padding: 0% 10%;
-}
-
 .anh{
-    width: 600px;
-    margin-top: 3rem;
+    width: 500px;
 }
 
 .chon{
@@ -277,39 +333,9 @@ main > div{
     color: aliceblue;
     position: absolute;
     font-weight: bolder;
-    top: 50%;
+    top: 80%;
     left: 37%;
-    right: 30%;
-}
-
-.menu{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    width: 100%;
-    display: none;
-}
-
-.menu>li{
-    border-bottom: 1px solid #e4e9ef;
-}
-
-.menu>li>a{
-    color: black;
-    background-color: white;
-    text-decoration: none;
-    display: block;
-    padding: 0 1rem;
-    line-height: 80px;
-}
-
-.menu>li>a:hover{
-    background-color: greenyellow;
-}
-
-.chon:hover .menu{
-    display: flex;
+    right:30%;
 }
 
 footer div {

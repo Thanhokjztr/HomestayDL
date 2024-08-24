@@ -4,12 +4,15 @@
     margin-top: 20%;
 }
 
+.wrap{
+    flex-wrap: wrap;
+}
+
 .flex
 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .Gotop {
@@ -204,114 +207,9 @@ ul.submenu li:hover {
     color: black;
 }
 
-
-
-/* main{
-    margin-top: 3rem;
-    margin-left: 2rem;  
-} */
-
-main{
-    margin-top: 3rem;
-    margin-left: 2rem;  
-}
-
-main > a{
-    text-decoration: none;
-    color: rgb(55, 50, 50);
-    font-size: 25px;
-    font-family: monospace;
-    margin-right: 1rem;
-    margin-left: 1rem;
-}
-
-main > h1{
-    text-align: center;
-    font-size: 80px;
-    margin-bottom: 0;
-}
-
-main > p{
-    color: rgb(114, 98, 78)   ;
-    font-family: monospace;
-    font-size: 30px;
-    text-align: center;
-}
-
-main > div{
-    font-family: monospace;
-    font-size: 22px;
-    padding-left: 5%;
-    padding-right: 5%;
-    text-align: center;
-    
-}
-
-.arrow{
-    font-size: 20px;
-}
-
-.xemthem{   
-    position: relative;
-    
-}
-
-.chons:hover .chon {
-    top: 40%;
-    left: 22%;
-    right: 22%;
-    text-align: center;
-}
-
-.phongnghi{
-    padding: 0% 10%;
-}
-
-.anh{
-    width: 600px;
-    margin-top: 3rem;
-}
-
-.chon{
-    font-size: 30px;
-    color: aliceblue;
-    position: absolute;
-    font-weight: bolder;
-    top: 50%;
-    left: 37%;
-    right: 30%;
-}
-
-.menu{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    width: 100%;
-    display: none;
-}
-
-.menu>li{
-    border-bottom: 1px solid #e4e9ef;
-}
-
-.menu>li>a{
-    color: black;
-    background-color: white;
-    text-decoration: none;
+.datphongs{
+    background-color: rgb(236, 236, 236);
+    padding: 5% 20%;
+    margin: 0% 3%; 
     display: block;
-    padding: 0 1rem;
-    line-height: 80px;
-}
-
-.menu>li>a:hover{
-    background-color: greenyellow;
-}
-
-.chon:hover .menu{
-    display: flex;
-}
-
-footer div {
-    text-align: center;
 }
