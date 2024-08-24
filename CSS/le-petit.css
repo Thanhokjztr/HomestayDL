@@ -149,13 +149,13 @@ ul.submenu li:hover {
     opacity: 1;
 }
 
+.sub:hover #a1{
+    color: black;
+}
+
 #a1 {
     font-size: 200%;
     color: white;
-}
-
-#a1:hover {
-    color: black;
 }
 
 .tmp #a2 {
