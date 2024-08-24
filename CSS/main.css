@@ -9,16 +9,23 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.Gotop a {
     background-color: rgba(0, 0, 255, 0.4);
     color: white;
     text-decoration: none;
     border-radius: 50%;
     padding: 10px 20px;
     font-size: 16px;
-    z-index: 1000;
+    margin-bottom: 5px;
+    animation: shake 1s infinite;
 }
 
-.Gotop:hover {
+.Gotop a:hover {
     background-color: #0056b3;
 }
 
@@ -422,6 +429,14 @@ footer div {
 
 }
 
+footer {
+    background-color: #00ff66;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    border: 0.01px solid rgba(0, 0, 0, 0);
+}
+
 footer a {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: lightslategray;
@@ -429,4 +444,18 @@ footer a {
 
 footer a:hover {
     font-size: 110%;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
