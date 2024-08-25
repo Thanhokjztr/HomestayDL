@@ -114,6 +114,10 @@ ul.submenu li {
     padding-bottom: 10%;
     width: 110%;
     padding-left: 5%;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    border-image-slice: 10%;
+    animation: borderMove 1s linear infinite;
 }
 
 ul.submenu li a {
@@ -161,7 +165,7 @@ ul.submenu li:hover {
     font-size: 200%;
     text-decoration: none;
     /* background-color: rgba(0, 255, 0, 0.4); */
-    color: white;
+    /* color: white; */
     margin: 0;
     white-space: nowrap;
     padding: 30px;
@@ -171,6 +175,10 @@ ul.submenu li:hover {
 }
 #a2:hover {
     background-color: rgba(112, 241, 121, 0.4);
+    border: 3px solid;
+    border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    border-image-slice: 10%;
+    animation: borderMove 1s linear infinite, blink 2s infinite, colorChange 3s infinite;
     /* color: black; */
 }
 
@@ -390,6 +398,10 @@ section.sec3 div {
     visibility: visible;
     background-color: rgba(47, 79, 79, 0.4);
     color: white;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    border-image-slice: 10%;
+    animation: borderMove 1s linear infinite;
 }
 
 .anhdichvu {
@@ -516,4 +528,13 @@ footer a:hover {
     60% { color: yellow; }
     80% { color: indigo; }
     100% { color: violet; }
+}
+
+@keyframes borderMove {
+    0% {
+        border-image-source: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    }
+    50% {
+        border-image-source: linear-gradient(45deg, violet, red, orange, yellow, green, blue, indigo, violet);
+    }
 }
