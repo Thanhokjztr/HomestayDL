@@ -426,6 +426,7 @@ section.sec3 div {
     visibility: hidden;
     /* border: 1px solid red; */
     display: block;
+    max-width: 100%;
 }
 
 .xemthem a {

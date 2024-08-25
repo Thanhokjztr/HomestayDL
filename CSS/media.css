@@ -1,0 +1,13 @@
+/* Kiểu dáng cho màn hình nhỏ hơn (tablet) */
+@media (max-width: 768px) {
+    ul.submenu li a {
+        font-size: 20px;
+    }
+}
+
+/* Kiểu dáng cho màn hình rất nhỏ (di động) */
+@media (max-width: 480px) {
+    ul.submenu li a {
+        font-size: 18px;
+    }
+}
