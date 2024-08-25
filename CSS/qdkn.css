@@ -3,6 +3,7 @@
     height: 100%;
     margin-top: 20%;
     text-shadow: blue 0.1em 0.1em 0.2em;
+    font-family: 'Dancing Script', cursive;
 }
 
 #qdkn2 > a {
@@ -19,6 +20,11 @@
 #h1 {
     text-align: center;
     font-size: 40px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+h2 {
+    font-family: 'Roboto Mono', monospace;
 }
 
 ol, ul {
@@ -33,7 +39,7 @@ ol, ul {
 
 #linkchi {
     font-size: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Roboto Mono', monospace;
     /* color: lightslategray; */
     font-weight: bolder;
 }

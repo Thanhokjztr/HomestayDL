@@ -118,6 +118,7 @@ ul.submenu li {
 
 ul.submenu li a {
     color: black;
+    font-family: 'Dancing Script', cursive;
     text-decoration: none;
     font-size: 30px;
     white-space: nowrap; /*chữ ko xuống dòng lung tung */
@@ -164,6 +165,7 @@ ul.submenu li:hover {
     margin: 0;
     white-space: nowrap;
     padding: 30px;
+    font-weight: bolder;
     animation: blink 2s infinite, colorChange 3s infinite;
     /* border: 1px solid red; */
 }
@@ -183,10 +185,12 @@ ul.submenu li:hover {
     margin: auto;
     margin-top: 15%;
     text-shadow: blue 0.1em 0.1em 0.2em;
+    font-family: 'Dancing Script', cursive;
     /* border: 1px solid red; */
 }
 
 #p2 {
+    font-family: 'Dancing Script', cursive;
     text-align: center;
     font-size: 20px;
     margin: 10px;
@@ -255,13 +259,15 @@ section.sec1 div {
 
 #p4 {
     font-weight: bold;
-    font-size: 60px;
+    font-size: 50px;
     padding: 0;
     margin-bottom: 0;
+    font-family: 'Roboto Mono', monospace;
 }
 
 #p5 {
     font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
 }
 
 #p6 {
@@ -275,6 +281,7 @@ section.sec1 div {
     font-weight: bold;
     font-size: 50px;
     padding: 0;
+    font-family: 'Roboto Mono', monospace;
     margin-bottom: 0;
 }
 
@@ -282,6 +289,7 @@ section.sec1 div {
     margin-top: 0;
     text-align: center;
     font-size: 30px;
+    font-family: 'Roboto Mono', monospace;
 }
 
 #p9 {
@@ -316,9 +324,10 @@ section.sec2 div {
 
 #p10 {
     font-weight: bold;
-    font-size: 50px;
+    font-size: 40px;
     padding: 0;
     margin-bottom: 0;
+    font-family: 'Roboto Mono', monospace;
 }
 
 #p11 {
@@ -351,6 +360,7 @@ section.sec3 div {
     font-size: 50px;
     padding: 0;
     margin-bottom: 0;
+    font-family: 'Roboto Mono', monospace;
 }
 
 #p13 {
@@ -368,6 +378,7 @@ section.sec3 div {
     width: 50%;
     text-align: center;
     position: relative;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .dichvu:hover .chon{
