@@ -13,4 +13,3 @@ document.getElementById('icontmenu').onclick = function(event) {
                 icon.classList.add('fa-xmark'); // Biểu tượng 'X' để ẩn menu
             }
 };
-///<i class="fa-solid fa-x"></i>
