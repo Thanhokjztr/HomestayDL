@@ -4,12 +4,21 @@
     margin-top: 20%;
 }
 
+.flex1{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
 .flex
 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .Gotop {
@@ -38,7 +47,6 @@
 .header.sticky {
     background-color: rgba(47, 79, 79, 0.4);
     z-index: 10;
-    padding-bottom: 9px;
 }
 
 body, html {
@@ -212,8 +220,7 @@ ul.submenu li:hover {
 } */
 
 main{
-    margin-top: 3rem;
-    margin-left: 2rem;  
+    margin-top: 3rem;  
 }
 
 main > a{
@@ -264,7 +271,9 @@ main > div{
 }
 
 .phongnghi{
-    padding: 0% 10%;
+    padding: 0% 0%;
+    padding-right: 0%;
+    margin: 0%;
 }
 
 .anh{
