@@ -152,10 +152,9 @@ ul.submenu li:hover {
     color: white;
 }
 
-/* #a1:hover {
-    color: black;
-    font-size: 220%;
-} */
+#a1:hover {
+    animation: colorChange 3s infinite;
+}
 
 .tmp #a2 {
     font-size: 200%;
@@ -231,8 +230,8 @@ iframe {
     color: white;
 }
 
-#p3 a:hover {
-    color: black;
+#p3 a i:hover {
+    animation: colorChange 3s infinite;
 }
 
 #img2 {
@@ -503,6 +502,6 @@ footer a:hover {
     20% { color: blue; }
     40% { color: green; }
     60% { color: yellow; }
-    80% { color: pink; }
-    100% { color: black; }
+    80% { color: indigo; }
+    100% { color: violet; }
 }
