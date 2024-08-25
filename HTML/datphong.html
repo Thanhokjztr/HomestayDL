@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="../CSS/datphong.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_green.css">
     <title>Document</title>
 </head>
 <body>
@@ -39,6 +41,7 @@
         <script src="../JAVACRIP/main2.js"></script>
     </header>
     <main class="datphongs">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <a href="../index.html">Trang Chu</a> 
         <i  class="fa-solid fa-arrow-right arrow"></i>
         <a href="datphong.html">Dat Phong</a><br/>  
@@ -64,10 +67,10 @@
                 </datalist><br/>
             </div>
             <div>
-                <span>Nhận phòng </span><br/><input type="text" placeholder="ngay/thang/nam.."/><br/>
+                <span>Nhận phòng </span><br/><input id="myID" type="text" placeholder="ngay/thang/nam.."/><br/>
             </div>
             <div>
-                <span>Trả phòng </span><br/><input type="text" placeholder="ngay/thang/nam.."/><br/>
+                <span>Trả phòng </span><br/><input id="myID" type="text" placeholder="ngay/thang/nam.."/><br/>
             </div>  
         </div> 
         <div class="dats">
@@ -76,6 +79,11 @@
             </p>
         </div>
     </main>
+    <script>
+        flatpickr("#myID", {
+            dateFormat: "Y-m-d",
+        });
+    </script>
     <foot>
     </foot>
 </body>
