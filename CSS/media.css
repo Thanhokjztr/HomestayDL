@@ -1,7 +1,7 @@
 /* Kiểu dáng cho màn hình nhỏ hơn (tablet) */
 @media (max-width: 768px) {
     ul.submenu li a {
-        font-size: 16px;
+        font-size: 25px;
     }
 
     #a1 {
@@ -120,7 +120,7 @@
 /* Kiểu dáng cho màn hình rất nhỏ (di động) */
 @media (max-width: 500px) {
     ul.submenu li a {
-        font-size: 14px;
+        font-size: 20px;
     }
 
     #a1 {
@@ -147,6 +147,7 @@
     .sec1 {
         display: block;
         text-align: center;
+        margin-left: 0;
     }
 
     section.sec1 div {
@@ -180,6 +181,7 @@
     .sec2 {
         flex-direction: column;
         text-align: center;
+        margin-left: 0;
     }
 
     section.sec2 div {
@@ -204,6 +206,7 @@
     .sec3 {
         display: block;
         text-align: center;
+        margin-left: 0;
     }
 
     section.sec3 div {
