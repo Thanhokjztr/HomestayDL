@@ -276,7 +276,7 @@ main > div{
 }
 
 .anh{
-    width: 670px;
+    width: 630px;
     margin-top: 3rem;
 }
 
@@ -300,7 +300,7 @@ main > div{
 }
 
 .menu>li{
-    border-bottom: 5px solid #0f742d;
+    border-bottom: 5px solid rgb(28, 113, 73);
 }
 
 
