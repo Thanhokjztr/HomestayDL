@@ -1,0 +1,46 @@
+.anh{
+    width: 400px;
+    margin-top: 3rem;
+}
+
+.chon{
+    font-size: 25px;
+}
+
+.chons:hover .chon {
+    top: 45%;
+    left: 25%;
+    right: 30%;
+    text-align: center;
+}
+
+.dats{
+    display: flex;
+    justify-content: center;
+}
+
+.dat{
+    padding: 5px;
+    width: 80px;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.dat::before{
+    position: absolute;
+    content: "";
+    background-color: rgb(28, 113, 73);
+    width: 100%;
+    height: 100%;
+    top:0%;
+    left: -100%;
+    transition: 0.6s;
+    z-index: 1;
+}
+
+.dat1{
+    z-index: 3; 
+    font-size: 1.5rem;
+    position: relative;
+    color: #e4e9ef;
+}

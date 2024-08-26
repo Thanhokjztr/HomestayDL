@@ -1,0 +1,70 @@
+.flex
+{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main > h1{
+    font-size: 50px;
+}
+
+main > h2{
+    font-size: 30px;
+    text-align: center;
+}
+
+main > p{
+    color: rgb(114, 98, 78)   ;
+    font-family: monospace;
+    font-size: 25px;
+    text-align: center;
+}
+
+#le-petit{
+    width: 100%;
+    width: 400px;
+    margin-top: 4rem;
+    margin: 0;
+    padding: 0;
+}
+
+#gioithieu{
+    width: 100%;
+    color: rgb(114, 98, 78);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 20px;
+    font-family: monospace; 
+}
+
+.thongtin{
+    background-color: rgb(100, 183, 23);
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    color: aliceblue;
+    padding-bottom: 3rem;
+}
+
+.thongtin > p:first-child{
+    font-size: 35px;
+}
+
+.thongtin > p{
+    font-size: 20px;
+}
+
+.left{
+    width: 90%;
+    border-right: none;
+    border-bottom: solid 3px;
+}
+
+.right{
+    width: 90%;
+    margin-left: 3rem;
+}
+
+.icon{
+    font-size: 45px;
+}

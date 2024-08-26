@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="../CSS/datphong.css" rel="stylesheet"/>
+    <link href="../CSS/media-datphong.css" rel="stylesheet" media="screen and (max-width:768px)"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_green.css">
     <title>Document</title>
@@ -15,14 +16,14 @@
     <header id="background">
         <script src="..//JAVACRIP/main1.js"></script>
         <div class="header">
-            <div class="flex wrap tmp">
+            <div class="flex wrap   tmp">
                 <ul class="menu1">
                     <li class="sub">
                         <div><a id="a1" href="#"><i class="fa-solid fa-bars"></i></a></div>
                         <ul class="submenu">
                             <li><a href="..//index.html">Trang Chủ</a></li>
                             <li><a href="#gioithieu">Giới Thiệu</a></li>
-                            <li><a href="#">Phòng Nghĩ</a></li>
+                            <li><a href="phongnghi.html">Phòng Nghĩ</a></li>
                             <li><a href="#">Ẩm Thực</a></li>
                             <li><a href="../HTML/qdkn.html">Quy Định Khu Nghĩ</a></li>
                             <li><a href="#">Liên Hệ</a></li>
@@ -30,7 +31,7 @@
                     </li>
                 </ul>
                 <div><img id="img1" src="../IMAGES/Logo.png" alt="anamadara"></div>
-                <div><a id="a2" href="../HTML/datphong.html">Đặt Ngay</a></div>
+                <div><a id="a2" href="datphong.html">Đặt Ngay</a></div>
             </div>
         </div>
 
@@ -46,37 +47,39 @@
         <i  class="fa-solid fa-arrow-right arrow"></i>
         <a href="datphong.html">Dat Phong</a><br/>  
         <br/>
-        <div class="flex1 wrap">
-            <div>
-                <span>Email </span><br/><input type="text" placeholder="Gmail..."/>
+        <div id="datphong">
+            <div class="flex1 wrap">
+                <div>
+                    <span>Email </span><br/><input type="text" placeholder="Gmail..."/>
+                </div>
+                <div>
+                    <span>Họ và tên </span><br/><input type="text" placeholder="Ho ten..."/><br/>
+                </div>
+                <div>
+                    <span>Số điện thoại </span><br/><input type="text" placeholder="Sdt..."/><br/>
+                </div>
+                <div>
+                    <span>Chọn phòng</span><br/>
+                    <input list="chonphong">
+                    <datalist id="chonphong">
+                        <option value="Le-Petit"></option>
+                        <option value="Villas"></option>
+                        <option value="Grande Suite"></option>
+                        <option value="Bellevue Suite"></option>
+                    </datalist><br/>
+                </div>
+                <div>
+                    <span>Nhận phòng </span><br/><input id="myID" type="text" placeholder="ngay/thang/nam.."/><br/>
+                </div>
+                <div>
+                    <span>Trả phòng </span><br/><input id="myID" type="text" placeholder="ngay/thang/nam.."/><br/>
+                </div>  
+            </div> 
+            <div class="dats">
+                <p class="dat">
+                    <span class="dat1">Đặt</span>
+                </p>
             </div>
-            <div>
-                <span>Họ và tên </span><br/><input type="text" placeholder="Ho ten..."/><br/>
-            </div>
-            <div>
-                <span>Số điện thoại </span><br/><input type="text" placeholder="Sdt..."/><br/>
-            </div>
-            <div>
-                <span>Chọn phòng</span><br/>
-                <input list="chonphong">
-                <datalist id="chonphong">
-                    <option value="Le-Petit"></option>
-                    <option value="Villas"></option>
-                    <option value="Grande Suite"></option>
-                    <option value="Bellevue Suite"></option>
-                </datalist><br/>
-            </div>
-            <div>
-                <span>Nhận phòng </span><br/><input id="myID" type="text" placeholder="ngay/thang/nam.."/><br/>
-            </div>
-            <div>
-                <span>Trả phòng </span><br/><input id="myID" type="text" placeholder="ngay/thang/nam.."/><br/>
-            </div>  
-        </div> 
-        <div class="dats">
-            <p class="dat">
-                <span class="dat1">Dat</span>
-            </p>
         </div>
     </main>
     <script>
