@@ -51,3 +51,73 @@ ol, ul {
 #linkchi a:hover {
     color: lightslategray;
 }
+
+@media (max-width: 768px) {
+    ul.submenu li a {
+        font-size: 25px;
+    }
+
+    #a1 {
+        font-size: 180%;
+    }
+
+    .tmp #a2 {
+        font-size: 180%;
+    }
+
+    #qdkn {
+        font-size: 35px;
+        margin-top: 40%;
+    }
+
+    #h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    ol, ul {
+        font-size: 16px;
+    }
+
+    #linkchi {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    ul.submenu li a {
+        font-size: 20px;
+    }
+
+    #a1 {
+        font-size: 150%;
+    }
+
+    .tmp #a2 {
+        font-size: 150%;
+    }
+
+    #qdkn {
+        font-size: 25px;
+        margin-top: 40%;
+    }
+
+    #h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    ol, ul {
+        font-size: 14px;
+    }
+
+    #linkchi {
+        font-size: 16px;
+    }
+}
