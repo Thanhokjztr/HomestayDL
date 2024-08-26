@@ -1,0 +1,385 @@
+.flex
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+html, body, header, footer{
+    margin: 0%;
+    padding: 0%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.Gotop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.Gotop a {
+    background-color: rgba(112, 241, 121, 0.8);
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    animation: shake 1s infinite;
+}
+
+.Gotop a:hover {
+    background-color: #0056b3;
+}
+
+.header {
+    position: fixed;
+    background-color: rgb(36, 30, 30);
+    width: 100%;
+    top: 0%;
+}
+
+.header.sticky {
+    background-color: rgba(47, 79, 79, 0.4);
+    z-index: 10;
+}
+
+a {
+    text-decoration: none;
+}
+
+.tmp {
+    /* border: 1px solid red; */
+    height: 100px;
+}
+
+#img1 {
+    width: 200px;
+}
+
+ul.menu1 {
+    list-style-type: none;
+    padding-left: 0;
+    display: block;
+}
+
+.sub {
+    
+    position: relative;
+    display: block;
+    /* border: 1px solid red; */
+    padding: 100%;
+    margin: 0%;
+    width: 100%;
+}
+
+.submenu {
+    position: absolute;
+    visibility: hidden;/* Ẩn luôn tại vùng đó */
+    transition: opacity 1s;
+    opacity: 0;
+    display: block;
+    /* border: 1px solid red; */
+    padding: 0%;
+    margin: 0%;
+    left: 0;
+    top: 100%;
+}
+
+ul.submenu li {
+    list-style-type: none;
+    border-bottom: 1px solid black;
+    background-color: rgba(211, 211, 211, 0.8);
+    display: block;
+    padding: auto;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 110%;
+    padding-left: 5%;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    border-image-slice: 10%;
+    animation: borderMove 1s linear infinite;
+}
+
+ul.submenu li a {
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    text-decoration: none;
+    font-size: 30px;
+    white-space: nowrap; /*chữ ko xuống dòng lung tung */
+    /* padding-left: 15%;
+    padding-right: 15%; */
+    margin: auto;
+    padding: auto;
+    display: block;
+}
+
+ul.submenu:hover li a {
+    
+    color: black;
+}
+
+ul.submenu li:hover {
+    background-color: rgba(112, 241, 121, 0.8);
+    color: black;
+}
+
+.submenu.visible {
+    visibility: visible; /* Hiển thị menu */
+    opacity: 1; /* Hiển thị đầy đủ khi menu có lớp visible */
+}
+
+#a1 {
+    font-size: 200%;
+    color: white;
+}
+
+#a1:hover {
+    animation: colorChange 3s infinite;
+}
+
+.tmp #a2 {
+    font-size: 200%;
+    text-decoration: none;
+    /* background-color: rgba(0, 255, 0, 0.4); */
+    /* color: white; */
+    margin: 0;
+    white-space: nowrap;
+    padding: 30px;
+    font-weight: bolder;
+    animation: blink 2s infinite, colorChange 3s infinite;
+    /* border: 1px solid red; */
+}
+#a2:hover {
+    background-color: rgba(112, 241, 121, 0.4);
+    border: 3px solid;
+    border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    border-image-slice: 10%;
+    animation: borderMove 1s linear infinite, blink 2s infinite, colorChange 3s infinite;
+    /* color: black; */
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    20% { opacity: 0.8; }
+    40% { opacity: 0.6; }
+    60% { opacity: 0.4;}
+    80% { opacity: 0.2;}
+    /* 100% { opacity: 0; } */
+}
+
+@keyframes colorChange {
+    0% { color: red; }
+    20% { color: blue; }
+    40% { color: green; }
+    60% { color: yellow; }
+    80% { color: indigo; }
+    100% { color: violet; }
+}
+
+@keyframes borderMove {
+    0% {
+        border-image-source: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    }
+    50% {
+        border-image-source: linear-gradient(45deg, violet, red, orange, yellow, green, blue, indigo, violet);
+    }
+}
+
+#marginhead {
+    margin-top: 100px;
+}
+
+#linkchi {
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    /* color: lightslategray; */
+    font-weight: bolder;
+}
+
+#linkchi a {
+    color: black;
+}
+
+#linkchi a:hover {
+    color: lightslategray;
+}
+
+#modau {
+    text-align: center;
+}
+
+#modau h1 {
+    font-size: 40px;
+}
+
+#md1 {
+    font-size: 20px;
+}
+
+#md2 {
+    margin-top: 5%;
+    font-size: 20px;
+}
+
+.form {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(155, 146, 146);
+}
+
+section.form #contactForm{
+    max-width: 600px;
+    width: 100%;
+    background-color: white;
+}
+
+#contactForm {
+    display: flex;
+    /* border: 1px solid red; */
+    flex-direction: column;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    border-image-slice: 10%;
+    animation: borderMove 1s linear infinite;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: vertical; /* Cho phép người dùng thay đổi kích thước theo chiều dọc */
+}
+
+#submit {
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    margin: 0%;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background: #45a049;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    display: block;
+    /* margin-top: -10px;
+    margin-bottom: 10px; */ 
+}
+
+footer div {
+    text-align: center;
+
+}
+
+.footer1 {
+    background-color: #00ff22;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    border: 0.01px solid rgba(0, 0, 0, 0);
+}
+
+footer a {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: lightslategray;
+}
+
+footer a:hover {
+    font-size: 110%;
+}
+
+#face a{
+    font-size: 30px;
+    /* border: 1px solid red; */
+    display: inline-block;
+    margin: 10px;
+}
+
+#face1 {
+    color: blue;
+}
+
+#ytb {
+    color: red;
+}
+
+#tt {
+    color: black;
+}
+
+#face a:hover {
+    background-color: darkgray;
+    border-radius: 50%;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    section.form #contactForm{
+        max-width: 500px;
+        width: 100%;
+        background-color: white;
+    }
+
+    ul.submenu li a {
+        font-size: 25px;
+    }
+
+    #a1 {
+        font-size: 180%;
+    }
+
+    .tmp #a2 {
+        font-size: 180%;
+    }
+}
+
+@media (max-width: 500px) {
+    section.form #contactForm{
+        max-width: 450px;
+        width: 100%;
+        background-color: lightblue;
+    }
+
+    .form {
+        /* border: 1px solid red; */
+        background-color: rgb(206, 200, 28);
+    }
+
+    ul.submenu li a {
+        font-size: 20px;
+    }
+
+    #a1 {
+        font-size: 150%;
+    }
+
+    .tmp #a2 {
+        font-size: 150%;
+    }
+}
