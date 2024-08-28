@@ -7,7 +7,7 @@
 .flex1{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .wrap{
@@ -251,7 +251,7 @@ main > div{
     padding-left: 5%;
     padding-right: 5%;
     text-align: center;
-    
+    padding-bottom: 2rem;
 }
 
 .arrow{
@@ -260,7 +260,7 @@ main > div{
 
 .xemthem{   
     position: relative;
-    
+    padding:1rem;
 }
 
 .chons:hover .chon {
@@ -276,8 +276,7 @@ main > div{
 }
 
 .anh{
-    width: 630px;
-    margin-top: 3rem;
+    width: 610px;
 }
 
 .chon{
@@ -323,7 +322,7 @@ main > div{
     padding: 0.5rem 1rem;
     text-align: center;
     display: inline-block;
-    background-color: rgba(40, 158, 60, 0.3);;
+    background-color: rgba(40, 158, 60, 0.3);
     font-weight: bolder;
     width: 120px;
     font-size: 3rem;

@@ -3,6 +3,10 @@
     margin-top: 3rem;
 }
 
+main > h1{
+    font-size: 60px;
+}
+
 .chon{
     font-size: 25px;
 }
