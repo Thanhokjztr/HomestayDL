@@ -53,5 +53,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!valid) {
             event.preventDefault();
         }
+
+        if (valid === true)
+        {
+            alert("đặt thành công");
+        }
     });
 });
