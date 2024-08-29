@@ -163,6 +163,58 @@ ul.submenu li:hover {
     /* color: black; */
 }
 
+footer div {
+    text-align: center;
+
+}
+
+.footer1 {
+    background-color: #00ff22;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    border: 0.01px solid rgba(0, 0, 0, 0);
+}
+
+footer a {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: lightslategray;
+}
+
+footer a:hover {
+    font-size: 110%;
+}
+
+#face a{
+    font-size: 30px;
+    /* border: 1px solid red; */
+    display: inline-block;
+    margin: 10px;
+}
+
+#face1 {
+    color: blue;
+}
+
+#ytb {
+    color: red;
+}
+
+#tt {
+    color: black;
+}
+
+#face a:hover {
+    background-color: darkgray;
+    border-radius: 50%;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 @keyframes blink {
     0% { opacity: 1; }
     20% { opacity: 0.8; }
@@ -188,6 +240,20 @@ ul.submenu li:hover {
     50% {
         border-image-source: linear-gradient(45deg, violet, red, orange, yellow, green, blue, indigo, violet);
     }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 #marginhead {
@@ -235,6 +301,13 @@ ul.submenu li:hover {
 
 .thuvienanh div {
     width: 25%;
+    height: 200px;
+    box-sizing: border-box;
+    border: 5px solid;
+    border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    border-image-slice: 10%;
+    animation: borderMove 1s linear infinite;
+    
 }
 
 .thuvienanh img {
