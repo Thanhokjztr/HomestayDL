@@ -38,12 +38,18 @@
 
 main {
     border: 1px solid red;
+    margin-top: 2rem;
+}
+
+#umg3{
+    width: 800px;
 }
 
 #ttat {
     font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: lightslategray;
+    margin-right: 10%;
 }
 
 #h2at2 {

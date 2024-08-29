@@ -1,0 +1,260 @@
+jQuery(window).load(function () {
+    webSdkOffers();
+});
+
+function webSdkOffers() {
+    // START WEB SDK CODE
+    jQuery('div[data-websdk]').each(function () {
+        var container = jQuery(this),
+            model_name = container.data('websdk'),
+            id = container.attr('id'),
+            custom_template = container.data('websdk-template'),
+            template_id, config, model, template, html;
+        template_id = custom_template ? custom_template : '#' + id + '_template';
+        template = jQuery(template_id).text();
+
+        if (typeof websdk_config !== 'undefined' && typeof websdk_config[id] !== 'undefined' && typeof ($fbsdk) !== 'undefined') {
+            config = websdk_config[id];
+            $fbsdk.baseHost = config.baseHost;
+
+            //ROOM FEATURE
+            if (model_name == 'Accommodations') {
+                $fbsdk.Accommodations.prototype.getURLParams = function () {
+                    var toRet = {
+                        output: this.getConfig().output,
+                        template: this.getConfig().template,
+                        locale: this.getConfig().locale,
+                        property: this.getConfig().property,
+                        offset: this.getConfig().offset,
+                        limit: this.getConfig().limit,
+                        imagew: this.getConfig().imagew,
+                        imageh: this.getConfig().imageh,
+                        sortBy: this.getConfig().sortBy,
+                        stripTags: this.getConfig().stripTags,
+                        onlyBookableRooms: config.params.onlyBookableRooms,
+                        orderType: this.getConfig().orderType,
+                        _authCode: config._authCode
+                    };
+                    return toRet;
+                };
+                var curlLoader = new $fbsdk.Loader();
+                curlLoader.add('rooms', new $fbsdk.Accommodations({
+                    property: config.params.property,
+                    locale: config.params.locale,
+                    limit: config.params.limit || 9999,
+                    template: 'default',
+                    output: 'json'
+                }));
+
+                curlLoader.add('i18n', new $fbsdk.I18n({
+                    property: config.params.property,
+                    locale: config.params.locale,
+                    template: 'default',
+                    output: 'json',
+                    module: 'accommodations'
+                }));
+
+
+                if (model_name == 'Accommodations') {
+                    $fbsdk.Accommodations.prototype.getURLParams = function () {
+                        var toRet = {
+                            output: this.getConfig().output,
+                            template: this.getConfig().template,
+                            locale: this.getConfig().locale,
+                            property: this.getConfig().property,
+                            offset: this.getConfig().offset,
+                            limit: this.getConfig().limit || 9999,
+                            imagew: this.getConfig().imagew,
+                            imageh: this.getConfig().imageh,
+                            sortBy: this.getConfig().sortBy,
+                            stripTags: this.getConfig().stripTags,
+                            onlyBookableRooms: this.getConfig().onlyBookableRooms,
+                            orderType: this.getConfig().orderType,
+                            _authCode: config._authCode
+                        };
+                        return toRet;
+                    };
+                    var curlLoader = new $fbsdk.Loader();
+                    curlLoader.add('rooms', new $fbsdk.Accommodations({
+                        property: config.params.property,
+                        locale: config.params.locale,
+                        template: 'default',
+                        output: 'json'
+                    }));
+                    curlLoader.add('i18n', new $fbsdk.I18n({
+                        property: config.params.property,
+                        locale: config.params.locale,
+                        template: 'default',
+                        output: 'json',
+                        module: 'accommodations'
+                    }));
+                    curlLoader.load(function (results) {
+                        if (!results.i18n.error && !results.rooms.error) {
+                            var rooms = results.rooms.origObject.getRawData();
+                            //console.log(rooms);
+                            var i18n = results.i18n.origObject.getRawData();
+                            var template_data = {rooms: {}};
+                            for (var i = 0; i < rooms.rooms.length; i++) {
+                                var room = rooms.rooms[i];
+                                var room_name = room.beName;
+                                var single_room = {
+                                    name: room_name,
+                                    occupancy: room.occupancy,
+                                    smoking: room.smoking,
+                                    roombathroomfeature_title: i18n["Bathroom features"],
+                                    roomequipments_title: i18n["Equipments"],
+                                    roomfeature_title: i18n["Room features"],
+                                    roombathroomfeature: [],
+                                    roomequipments: [],
+                                    roomfeature: [],
+                                    hasBedTypes: typeof room.bedTypes !== 'undefined' && room.bedTypes.length > 0,
+                                    bedTypes: room.bedTypes
+                                };
+
+                                for (var featureType in room.features) {
+                                    if (room.features.hasOwnProperty(featureType)) {
+                                        single_room['has_' + featureType] = false;
+                                        for (var k = 0; k < room.features[featureType].length; k++) {
+                                            var string_id = featureType + '_' + room.features[featureType][k];
+                                            var string_name =  'accommodation-feature-' + room.features[featureType][k];
+                                            single_room[featureType].push({name: i18n[string_name].trim(), id: string_id});
+                                            single_room['has_' + featureType] = true;
+                                        }
+                                    }
+                                }
+
+                                template_data.rooms[room_name] = single_room;
+                            }
+
+                            if (typeof config.roomType !== 'undefined') {
+                                if(typeof template_data.rooms[room_name] !== 'undefined'){
+                                    template_data.rooms = [template_data.rooms[config.roomType]];
+                                    html = Mustache.render(template, template_data);
+                                    container.html(html);
+                                    container.closest('.loading').addClass(' processed noloading');
+                                    container.find('.smoking .text').text(smokingTranslations[room.smoking]);
+                                }else{
+                                    console.log('Room type not found in the list of rooms');
+                                    container.closest('.loading').addClass(' processed noloading');
+                                    container.html('Room type not found in the list of rooms');
+                                }
+
+                            }else{
+                                console.log('Room type not defined');
+                                console.log(template_data.rooms);
+                                container.closest('.loading').addClass(' processed noloading');
+                                container.html('Room type not defined');
+                            }
+                        }
+                    });
+                }
+            }
+
+            //OFFERS
+            if (model_name == 'Offers') {
+                model = new $fbsdk[model_name](config.params);
+                model.setAuthToken(config._authCode);
+                model.load(function (error) {
+                    var data;
+                    if (!error) {
+                        data = jQuery.extend(true, {}, this.getRawData());
+                        /*
+                        * id = offers_list : carousel or list of all offers
+                        * id = offers_list_single : single highlighted offers
+                        * id = room_xxx: room starting from
+                        * */
+
+                        //normalize output
+                        data.rates = data.rates.map(function (rate) {
+                            return convertWebSDKOffer(rate, config);
+                        });
+
+                        //offers to exclude using rate name (Fastbooking)
+                        if (typeof rates_to_hide !== 'undefined'
+                            && rates_to_hide !== ''
+                            && id === 'offers_list') {
+                            data.rates = data.rates.filter(function (el) {
+                                return (rates_to_hide.indexOf(el.rate.id) == -1);
+                            });
+                        }
+
+                        //offers to exclude using rate id (Availpro)
+                        if (typeof rates_to_hide !== 'undefined'
+                            && rates_to_hide !== ''
+                            && id === 'offers_list') {
+                            data.rates = data.rates.filter(function (el) {
+                                return (rates_to_hide.indexOf(el.rate.code) == -1);
+                            });
+
+                        }
+
+
+                        //fix order for AVP (ordering should be supported but in fact doesn't work as 2022-04-08)
+                        if (is_AVP) {
+                            //order should be always defined if config is generated by get_offer() php function
+                            var order = config.params.orderBy;
+
+                            //another fail-safe if order is not defined
+                            order = typeof order === 'undefined' ? 'pricePerNight' : order;
+                            data.rates.sort(function (a, b) {
+                                switch (order) {
+                                    case 'totalPrice':
+                                        return parseFloat(a.best.totalPrice) - parseFloat(b.best.totalPrice);
+                                    case 'checkinDate':
+                                        return parseFloat(a.first.fromYYMMDD) - parseFloat(b.first.fromYYMMDD);
+                                    default:
+                                        return parseFloat(a.best.pricePerNight) - parseFloat(b.best.pricePerNight);
+                                }
+                            });
+
+                            //rooms starting from has no room id in the book link, so we need to fix it
+                            if (typeof fusionConfig !== 'undefined') {
+                                if (id.includes('room')) {
+                                    data.rates.forEach(function (rate) {
+                                        rate.best.bookLink.onclick = rate.first.bookLink.onclick
+                                    });
+                                }
+                            }
+
+                        }
+
+                        //sort output
+                        if (id === 'offers_list' || id === 'offers_list_single') {
+                            data.rates.sort(function (a, b) {
+                                return parseFloat(a.rate.order) - parseFloat(b.rate.order);
+                            });
+                        }
+
+                        data.id = id;
+
+                        //add odd-even offers class
+                        for (var k = 0; k < data.rates.length; k++) {
+                            data.rates[k].rate.class += k % 2 === 0 ? ' even' : ' odd';
+                        }
+
+
+                        //number of offers displayed
+                        if (typeof data.rates !== 'undefined' && typeof config.number !== 'undefined'
+                            && config.number < data.rates.length) {
+                            data.rates = data.rates.slice(0, parseInt(config.number, 10));
+                        }
+
+                        // console.log(container);
+
+                        //print Mustache template
+                        html = Mustache.render(template, data);
+                        container.html(html);
+
+
+                        container.closest('.loading').addClass(' processed noloading');
+                        lazyLoadInstance.update();
+
+                        container.trigger('builder_offers_ready', [data]);
+                    }
+                });
+            }
+
+        }
+    });
+    // END WEB SDK CODE
+}

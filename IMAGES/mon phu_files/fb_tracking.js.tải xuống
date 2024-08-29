@@ -1,0 +1,320 @@
+// Current tracking uses FB_useGoogleAnalytics for events
+// Hence, we want to override the value and set it to false in order to stop the current tracking
+var FB_useGoogleAnalytics_Promise = jQuery.Deferred(function (dfd) {
+	waitFB_useGoogleAnalytics = setInterval(function(){
+		if(typeof(FB_useGoogleAnalytics)!=='undefined') {
+			clearInterval(waitFB_useGoogleAnalytics);
+			dfd.resolve(FB_useGoogleAnalytics);
+		}
+	}, 1000);
+	setTimeout(function () {
+		dfd.reject(new Error('Error waiting fblib function'));
+	}, 5000);
+}).promise();
+
+FB_useGoogleAnalytics_Promise.then(function(resp){
+	if ( resp !== false ){
+		FB_useGoogleAnalytics = false;
+	}
+}).fail(function(error){
+	var FB_useGoogleAnalytics = false;
+	clearInterval(waitFB_useGoogleAnalytics);
+});
+
+var FB_useAsyncGoogleAnalytics_Promise = jQuery.Deferred(function (dfd) {
+	waitFB_useAsyncGoogleAnalytics = setInterval(function(){
+		if(typeof(FB_useAsyncGoogleAnalytics)!=='undefined') {
+			clearInterval(waitFB_useAsyncGoogleAnalytics);
+			dfd.resolve(FB_useAsyncGoogleAnalytics);
+		}
+	}, 1000);
+	setTimeout(function () {
+		dfd.reject(new Error('Error waiting fblib function'));
+	}, 5000);
+}).promise();
+
+FB_useGoogleAnalytics_Promise.then(function(resp){
+	if ( resp !== false ){
+		FB_useAsyncGoogleAnalytics = false;
+	}
+}).fail(function(error){
+	var FB_useAsyncGoogleAnalytics = false;
+	clearInterval(waitFB_useAsyncGoogleAnalytics);
+});
+
+// Old way of waiting for fblib vars
+// Replaced by a promise for new pro theme using a js loader
+// if (typeof FB_useGoogleAnalytics !== 'undefined'){
+// 	FB_useGoogleAnalytics = false;
+// }
+// else {
+// 	var FB_useGoogleAnalytics = false;
+// }
+// if (typeof FB_useAsyncGoogleAnalytics !== 'undefined'){
+// 	FB_useAsyncGoogleAnalytics = false;
+// }
+// else {
+// 	var FB_useAsyncGoogleAnalytics = false;
+// }
+
+( function( $ ){
+	function isGA4(tracker) {
+		return /^G-.+/.test(tracker);
+	}
+	if ( typeof fb_send_event === 'undefined'){
+		// Function to handle the tracking for one event
+		// selector : css selector
+		// type : menu (if more than one element to track) || button
+		// category, action and label are params we want to pass for the event
+		// interval : if the event we want to track is loaded after page load
+		function fb_send_event( selector, type, category, action, label, interval ){
+			// If the css selector element is loaded at page load
+			if ( interval === '' || interval === null ){
+				// If we want to track more than one element
+				if (type == 'menu'){
+					// For each element
+					$(selector).each( function( index ){
+						// Set the index of the element
+						// Ex: 4 offers, the first will be 1 etc...
+						var number = index + 1;
+						// Set the on click function
+						$(this).click(function(){
+							// If the params are set and we have the trackers
+							if (typeof fb_tracking_var !== 'undefined' && typeof fb_tracking_var.tracker !== 'undefined'){
+								// If we dont use gtm
+								if ( typeof fb_tracking_var.usegtm !== 'undefined' && fb_tracking_var.usegtm === '0' ) {
+									// For each tracker
+									$.each( fb_tracking_var.tracker, function( index, value){
+										if (isGA4(value)) {
+											gtag('event', action, {
+												send_to: value,
+												event_category: category,
+												event_label: label + '_' + number
+											});
+										} else {
+											// The 1st tracker in the gua api is named 'default'
+											if ( value === 'default'){
+												// We push the event in gua
+												// the label will be smth like offer_1
+												ga( 'send','event', category, action, label + '_' + number );
+											}
+											// If its not the 1st tracker
+											else {
+												// Push the event
+												ga( value + '.send','event', category, action, label + '_' + number);
+											}
+										}
+									});
+								}
+								// We Push only the variables and GTM handles the rest for each tags
+								else{
+
+									dataLayer.push({
+										event: 'Action trackings',
+										'category': category,
+										'action': action,
+										'label': label + '_' + number,
+										'interaction': false,
+									});
+
+								}
+							}
+						})
+					})
+				}
+				// If we want to track only one element
+				else if ( type == 'button'){
+					// Set the on click function
+					$( selector ).click(function() {
+						// If the params are set and we have the trackers
+						if (typeof fb_tracking_var != 'undefined' && typeof fb_tracking_var.tracker != 'undefined'){
+							
+							// If we dont use gtm
+							if ( typeof fb_tracking_var.usegtm !== 'undefined' && fb_tracking_var.usegtm === '0' ) {
+								// For each tracker
+								$.each( fb_tracking_var.tracker, function( index, value){
+									if (isGA4(value)) {
+										gtag('event', action, {
+											send_to: value,
+											event_category: category,
+											event_label: label
+										});
+									} else {
+										// The 1st tracker in the gua api is named 'default'
+										if ( value === 'default'){
+											// We push the event in gua
+											// the label will be smth like offer
+											ga( 'send','event', category, action, label );
+										}
+										// If its not the 1st tracker
+										else {
+											// Push the event
+											ga( value + '.send','event', category, action, label);
+										}
+									}
+								});
+							}
+							// We Push only the variables and GTM handles the rest for each tags
+							else {
+
+								dataLayer.push({
+									event: 'Action trackings',
+									'category': category,
+									'action': action,
+									'label': label,
+									'interaction': false,
+								});
+
+							}
+						}
+					});
+				}
+			}
+			else {
+				// If the css selector element is not loaded at page load but asynchronously with JS
+				// We set the on click on a parent element loaded at the page load that will bubble to the selector later on
+				$( interval ).on( 'click', selector, function(){
+					// If we want to track only one element
+					if ( type == 'button' ){
+						if (typeof fb_tracking_var != 'undefined' && typeof fb_tracking_var.tracker != 'undefined'){
+							if ( typeof fb_tracking_var.usegtm !== 'undefined' && fb_tracking_var.usegtm === '0' ) {
+								// For each tracker
+								$.each( fb_tracking_var.tracker, function( index, value){
+									if (isGA4(value)) {
+										gtag('event', action, {
+											send_to: value,
+											event_category: category,
+											event_label: label
+										});
+									} else {
+										if ( value === 'default'){
+											ga( 'send','event', category, action, label );
+										}
+										else {
+											ga( value + '.send','event', category, action, label);
+										}
+									}
+								});
+							}
+							else {
+
+								dataLayer.push({
+									event: 'Action trackings',
+									'category': category,
+									'action': action,
+									'label': label,
+									'interaction': false,
+								});
+
+							}
+						}
+					}
+					// If we want to track more than one element
+					else if ( type == 'menu' ){
+						if (typeof fb_tracking_var != 'undefined' && typeof fb_tracking_var.tracker != 'undefined'){
+							// Set the index for each element
+							current_selector_index = $(this).index(selector) + 1;
+							if ( typeof fb_tracking_var.usegtm !== 'undefined' && fb_tracking_var.usegtm === '0' ) {
+								// For each tracker
+								$.each( fb_tracking_var.tracker, function( index, value){
+									if (isGA4(value)) {
+										gtag('event', action, {
+											send_to: value,
+											event_category: category,
+											event_label: label + '_' + current_selector_index
+										});
+									} else {
+										if (value === 'default') {
+											ga('send', 'event', category, action, label + '_' + current_selector_index);
+										} else {
+											ga(value + '.send', 'event', category, action, label + '_' + current_selector_index);
+										}
+									}
+								});
+							}
+							else{
+
+								dataLayer.push({
+									event: 'Action trackings',
+									'category': category,
+									'action': action,
+									'label': label + '_' + current_selector_index,
+									'interaction': false,
+								});
+
+							}
+						}	
+					}
+				});
+			}
+		}
+	}
+
+	$(document).ready( function (){
+		// If we want to track events
+		if ( typeof fb_tracking_var !== 'undefined' && typeof fb_tracking_var.usetracking !== 'undefined' && fb_tracking_var.usetracking === '1' ){
+			// If there are events
+			if ( typeof fb_tracking_var.events !== 'undefined' ){
+				// For each events, use the fb_send_event to handle the tracking
+				$.each( fb_tracking_var.events, function( event_index, event_value ){			
+					fb_send_event( event_value.selector, event_value.type, event_value.category, event_value.action, event_value.label, event_value.interval );
+				});
+			}
+
+			// Social Connect Custom dimension Tracking
+			if ( typeof fb_tracking_var.socialconnect !== 'undefined' && fb_tracking_var.socialconnect == '1' && typeof fb_tracking_var.tracker != 'undefined' ){
+				var dimensionValue = 'Not Connected';
+				var co = '';
+				// If we don't use GTM
+				if ( typeof fb_tracking_var.usegtm !== 'undefined' && fb_tracking_var.usegtm === '0' ) {
+					//For each trackers
+					$.each( fb_tracking_var.tracker, function( index, value){
+						if ( value === 'default'){
+							// If connected, we change the value of the dimension
+							if( typeof localStorage.user_id !== 'undefined' ){
+								dimensionValue = 'Connected';
+								var co = localStorage.user_id;
+							  	ga('set', 'userId', localStorage.user_id);
+							  	ga('set', '&uid', localStorage.user_id); 
+							}
+
+							ga('set', 'dimension1', dimensionValue);
+							ga('send', 'event', 'Connexion Tracking', 'Page View', {
+							nonInteraction: true
+							});
+						}
+						else {
+							// If connected, we change the value of the dimension
+							if( typeof localStorage.user_id !== 'undefined' ){
+								dimensionValue = 'Connected';
+								var co = localStorage.user_id;
+							  	ga(value + '.set', 'userId', localStorage.user_id);
+							  	ga(value + '.set', '&uid', localStorage.user_id); 
+							}
+							ga(value + '.set', 'dimension1', dimensionValue);
+							ga(value + '.send', 'event', 'Connexion Tracking', 'Page View', {
+							nonInteraction: true
+							});
+						}
+					});
+				}
+				else{
+					// If connected, we change the vakue of the dimension
+					if( typeof localStorage.user_id !== 'undefined' ){
+						dimensionValue = 'Connected';
+						var co = localStorage.user_id;
+						dataLayer.push({
+						  	'user_id': localStorage.user_id,
+						});
+					}
+					dataLayer.push({
+						'interaction': true,
+					  	'connexion': dimensionValue,
+					  	event: 'Connexion Tracking',
+					  	'category': 'Page View',
+					});
+				}
+			}
+		}
+	});
+})(jQuery);

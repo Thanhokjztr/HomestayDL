@@ -24,8 +24,16 @@ main > a{
     margin-left: 1rem;
 }
 
+main >a:hover{
+    color: rgb(15, 135, 95);
+}
+
 .arrow{
     font-size: 20px;
+}
+
+.input-error {
+    border: 2px solid red; /* Đổi màu viền thành đỏ */
 }
 
 .datphongs{
@@ -37,6 +45,7 @@ main > a{
 #datphong{
     padding-top: 2rem;
     background-color: rgba(108, 116, 108, 0.6);
+    border-radius: 15px;
 }
 
 span{
