@@ -1,0 +1,273 @@
+( function ($) {
+    $(document).ready(function () {
+        asideScroll();
+        collapsibleContent();
+        doGallery();
+        triggerqwEvent();
+        scrollToRates();
+
+    });
+
+    $(window).scroll(function () {
+        asideScroll();
+    });
+
+
+    function asideScroll() {
+        var aside = $('.aside_wrapper.fixed_on_scroll');
+        if (aside.length > 0) {
+            var bottomController = $('footer');
+            var main = $('main');
+            var afterContent = main.next('div');
+            if (afterContent.length > 0 && !afterContent.is(bottomController)) {
+                bottomController = afterContent;
+            }
+            var windowHeight = $(window).height();
+            var bottomControllerVisiblePart = $(window).scrollTop() - Math.floor(bottomController.offset().top - windowHeight);
+            var bottom = 0;
+            if (bottomControllerVisiblePart >= 0) {
+                bottom = bottomControllerVisiblePart;
+            }
+
+            if ($(window).scrollTop() > (main.offset().top - $('header').height()) && !is_mobile) {
+                aside.css({
+                    'bottom': bottom
+                });
+                aside.addClass('fixed');
+            } else {
+                aside.css({
+                    'bottom': '0'
+                });
+                aside.removeClass('fixed');
+            }
+
+        }
+    }
+
+    function collapsibleContent() {
+        var button = $('.main .collapsibleContent_btn'),
+            mClass = 'open',
+            mClass2 = 'content_is_visible';
+        button.click(function () {
+            setTimeout(function () {
+                asideScroll();
+            }, 200);
+            var btn = $(this);
+            var parent = $('.content_wrap');
+            var wrap = parent.find('.collapsibleContent');
+            if (!btn.hasClass(mClass)) {
+                var height = wrap.find('.the_content').outerHeight(true);
+                wrap.css({
+                    'height': height
+                });
+                btn.addClass(mClass);
+                btn.html(read_less);
+                $(parent).addClass(mClass2);
+            } else {
+                wrap.css({
+                    'height': 0
+                });
+                btn.html(read_more);
+                btn.removeClass(mClass);
+                $(parent).removeClass(mClass2);
+            }
+        });
+    }
+
+    function scrollToRates() {
+        var item = $('.main qw-price');
+        item.click(function () {
+            var goTo = '#break_scroll',
+                top_part = item.outerHeight(),
+                top = $(goTo).offset().top - top_part;
+
+            $('html,body').stop().animate({scrollTop: top}, 500);
+        });
+    }
+    function fixFancyboxSlick(innerElem) {
+        // Fix for mini gallery fancy box
+        var selector = '.slick-slide:not(.slick-cloned)';
+        if(innerElem){
+            selector = selector+' '+innerElem;
+        }
+        // Skip cloned elements
+        $().fancybox({
+            selector: selector,
+            backFocus: false,
+            loop: true
+
+        });
+        // Remove fancybox cloned elements
+        $(document).on('ready', function () {
+            if(innerElem){
+                $('.slick-cloned '+innerElem).removeAttr('data-fancybox');
+            }else {
+                $('.slick-cloned .thumb').removeAttr('data-fancybox');
+            }
+        });
+
+        // Attach custom click event on cloned elements,
+        // trigger click event on corresponding link
+        var clonedElement = '.slick-cloned';
+        if(innerElem){
+            clonedElement = '.slick-cloned '+innerElem;
+        }
+        $(document).on('click', clonedElement, function (e) {
+            $(selector)
+                .eq(( $(e.currentTarget).attr("data-slick-index") || 0) % $(selector).length)
+                .trigger("click.fb-start", {
+                    $trigger: $(this)
+                });
+
+            return false;
+        });
+    }
+    function doGallery() {
+        var wrap = $('.aside_content:not(.single_image) .gallery');
+        if (wrap.length > 0) {
+
+            //LAZY LOADING (before carousel is loaded)
+            wrap.on("init", function () {
+                lazyLoadInstance.update();
+            });
+
+            wrap.slick({
+                autoplay: false,
+                arrows: true,
+                dots: false,
+                rtl: rtl,
+                infinite: true,
+                nextArrow: wrap.parent().find('.next'),
+                prevArrow: wrap.parent().find('.prev'),
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                variableWidth: false,
+                centerMode: false,
+            });
+            fixFancyboxSlick('.fix_fancybox');
+        }
+    }
+
+
+    $(window).on('qw-room-rich-info--loaded', function () {
+        fusionAmeniteiesTab = $('.qw-room-rich-info__amenities-trigger');
+        fusionAmeniteiesTab.on('click', function () {
+            $(this).toggleClass('active')
+        });
+        if ($('qw-room-rich-info').hasClass('autoexpand')) {
+            fusionAmeniteiesTab.trigger('click');
+        }
+    });
+
+    //this event is trigged on cards component loaded
+    function triggerqwEvent() {
+        var component = $('qw-room-rich-info');
+        counter = 0;
+        if (component.length > 0) {
+            setInterval(function () {
+                if ((component).hasClass('qw-room-rich-info--loaded') && counter === 0) {
+                    $(window).trigger('qw-room-rich-info--loaded');
+
+                    counter++;
+                }
+            }, 500);
+        }
+    }
+
+    //HOURS SPENT TO MAKE THE OFFER CARDS LIKE A CAROUSEL: 36
+    //Please increase the counter above if you will work on it
+
+    window.deBounce = false;
+    //this event is triggered on every cards component mutation
+    $(document).on("DOMSubtreeModified", '#break_scroll .qw-room-rates__wrapper', function () {
+        if (deBounce) {
+            return;
+        }
+        deBounce = true;
+
+        setTimeout(function () {
+            deBounce = false;
+        }, 500);
+
+        setTimeout(function () {
+            var cards = $('.qw-room-rate--card');
+            var widthCard = cards.outerWidth(true);
+            var theme = $('body').attr('id');
+            var scrollTheme = theme === 'dark_theme' || theme === 'darken_theme' ? 'light' : 'dark';
+
+            /*Here we cannot use a "true" carousel like slick. We used mCustomScrollbar api to mock a carousel behaviour.  */
+            $('#break_scroll qw-room-rates').each(function () {
+                var el = $(this);
+                el.mCustomScrollbar({
+                    axis: "x",
+                    scrollInertia: 500,
+                    theme: scrollTheme,
+                    mouseWheel: {enable: false},
+                    advanced: {
+                        autoExpandHorizontalScroll: true,
+                        updateOnContentResize: true
+                    },
+                    callbacks: {
+                        onTotalScroll: function () {
+                            var next = $(this).parent().find('.arrow.next');
+                            next.addClass('disabled');
+
+                        },
+                        onTotalScrollBack: function () {
+                            var prev = $(this).parent().find('.arrow.prev');
+                            prev.addClass('disabled');
+
+                        },
+                        whileScrolling: function () {
+                            var arrow = $(this).parent().find('.arrow');
+                            if (arrow.hasClass('disabled')) {
+                                arrow.removeClass('disabled');
+                            }
+                        },
+                        onUpdate: function () {
+                            setTimeout(function () {
+                                    var arrow = el.parent().find('.arrow');
+                                    var cards = el.find('qw-room-rate');
+                                    if (cards.length > 1) {
+                                        arrow.fadeIn('slow');
+                                    } else {
+                                        arrow.fadeOut('slow');
+                                    }
+                                }, 200
+                            )
+                        }
+
+                    },
+                    scrollButtons: {
+                        enable: true,
+                        scrollType: "stepped"
+                    },
+                    snapAmount: widthCard
+                });
+            });
+
+
+            $('qw-room-rates').parent().each(function () {
+                var me = $(this);
+                if(!me.hasClass('qw-room-list-card__prices')) {
+                    var arrows = me.find('.arrow');
+                    var hasScrollBar = !me.find('.mCSB_container').hasClass('mCS_no_scrollbar_x');
+                    if (arrows.length === 0 && hasScrollBar) {
+                        me.append(' <a href="javascript:;" class="arrow next hidden-sm hidden-xs "></a> <a href="javascript:;" class="arrow prev hidden-sm hidden-xs disabled"></a>');
+                    }
+
+                    me.find('.arrow.next').on('click', function () {
+                        me.find('.mCSB_buttonRight').trigger('click');
+                    });
+
+                    me.find('.arrow.prev').on('click', function () {
+                        me.find('.mCSB_buttonLeft').trigger('click');
+                    });
+                }
+            })
+
+        }, 300)
+    });
+
+}(jQuery) );
+
