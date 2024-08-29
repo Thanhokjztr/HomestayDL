@@ -1,3 +1,7 @@
+.flex1{
+    display: flex;
+}
+
 #tdamthuc {
     font-size: 50px;
     height: 100%;
@@ -41,19 +45,62 @@ main {
     margin-top: 2rem;
 }
 
-#umg3{
-    width: 800px;
-}
-
 #ttat {
     font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: lightslategray;
-    margin-right: 10%;
+    margin-right: 5%;
 }
 
 #h2at2 {
     text-align: center;
     font-size: 3rem;
     font-family: 'Roboto Mono', monospace;
+}
+
+.mon{
+    width: 450px;
+}
+
+.mons{
+    position: relative;
+}
+
+.mons::before{
+    transition: 0.4s;
+    position: absolute;
+    content: "";
+    width: 90%;
+    height: 90%;
+    top:5%;
+    bottom:5%;
+    right: 5%;
+    left:5%;
+    background-color: rgba(92, 101, 93, 0.5);
+}
+
+.chon{
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-weight: bolder;
+    position: absolute;
+    top:55%;
+    left: 30%;
+    right: 25%;
+    transition: 0.4s;
+}
+
+.mons:hover .chon{
+    top:35%
+}
+
+.xem{
+    position: absolute;
+    top:55%;
+    left: 30%;
+    right: 25%;
+}
+
+.mons:hover::before{
+    background-color: rgba(92, 101, 93, 0.8);;
 }
