@@ -1,9 +1,3 @@
-#pn {
-    font-size: 50px;
-    height: 100%;
-    margin-top: 20%;
-}
-
 .wrap{
     flex-wrap: wrap;
 }
@@ -22,198 +16,6 @@
     justify-content: center;
 }
 
-.Gotop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: rgba(0, 0, 255, 0.4);
-    color: white;
-    text-decoration: none;
-    border-radius: 50%;
-    padding: 10px 20px;
-    font-size: 16px;
-    z-index: 1000;
-}
-
-.Gotop:hover {
-    background-color: #0056b3;
-}
-
-.header {
-    position: fixed;
-    width: 100%;
-    top: 0%;
-}
-
-.header.sticky {
-    background-color: rgba(47, 79, 79, 0.4);
-    z-index: 10;
-    padding-bottom: 9px;
-}
-
-body, html {
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-}
-
-a {
-    text-decoration: none;
-}
-
-#background {
-    height: 100%;
-    border: 0.01px solid white;
-    background-size: cover;
-    background-position: center; /* Căn giữa hình ảnh */
-    background-repeat: no-repeat; /* Ngăn hình ảnh lặp lại */
-    /* height: 100vh; */
-}
-
-header {
-    top: 0;
-    height: 100%;
-    width: 100%;
-    color: white;
-}
-
-.tmp {
-    /* border: 1px solid red; */
-    height: 100px;
-}
-
-#img1 {
-    width: 200px;
-}
-
-ul.menu1 {
-    list-style-type: none;
-    padding-left: 0;
-    display: block;
-}
-
-.sub {
-    
-    position: relative;
-    display: block;
-    /* border: 1px solid red; */
-    padding: 100%;
-    margin: 0%;
-    width: 100%;
-}
-
-.submenu {
-    visibility: hidden;
-    position: absolute;
-    transition: opacity 1s;
-    opacity: 0;
-    display: block;
-    /* border: 1px solid red; */
-    padding: 0%;
-    margin: 0%;
-    left: 0;
-    top: 100%;
-}
-
-ul.submenu li {
-    list-style-type: none;
-    border-bottom: 1px solid black;
-    background-color: rgba(211, 211, 211, 0.8);
-    display: block;
-    padding: auto;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    width: 110%;
-    padding-left: 5%;
-}
-
-ul.submenu li a {
-    color: black;
-    text-decoration: none;
-    font-size: 30px;
-    white-space: nowrap; /*chữ ko xuống dòng lung tung */
-    /* padding-left: 15%;
-    padding-right: 15%; */
-    margin: auto;
-    padding: auto;
-    display: block;
-}
-
-ul.submenu:hover li a {
-    
-    color: black;
-}
-
-ul.submenu li:hover {
-    background-color: rgba(112, 241, 121, 0.8);
-    color: black;
-}
-
-
-.sub:hover .submenu{
-    visibility: visible;
-    opacity: 1;
-}
-
-.sub:hover #a1{
-    color: black;
-}
-
-#a1 {
-    font-size: 200%;
-    color: white;
-}
-
-.tmp #a2 {
-    font-size: 200%;
-    text-decoration: none;
-    /* background-color: rgba(0, 255, 0, 0.4); */
-    color: white;
-    margin: 0;
-    white-space: nowrap;
-    padding: 30px;
-    padding-top: 100%;
-    /* border: 1px solid red; */
-}
-#a2:hover {
-    background-color: rgba(112, 241, 121, 0.4);
-    color: black;
-}
-
-#div2 {
-    text-align: center;
-}
-
-#p1 {
-    text-align: center;
-    font-size: 35px;
-    padding: 0;
-    margin: auto;
-    margin-top: 15%;
-    /* border: 1px solid red; */
-}
-
-#p2 {
-    text-align: center;
-    font-size: 20px;
-    margin: 0;
-    padding: 0;
-}
-
-#p3 {
-    text-align: center;
-    font-size: 50px;
-}
-
-#p3 a {
-    color: white;
-}
-
-#p3 a:hover {
-    color: black;
-}
-
 main{
     margin-top: 3rem; 
 }
@@ -225,6 +27,10 @@ main > a{
     font-family: monospace;
     margin-right: 1rem;
     margin-left: 1rem;
+}
+
+main >a:hover{
+    color: rgb(15, 135, 95);
 }
 
 main > h1{
@@ -367,8 +173,4 @@ main > h2{
     top: 70%;
     left: 37%;
     right: 30%;
-}
-
-footer div {
-    text-align: center;
 }

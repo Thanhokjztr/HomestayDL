@@ -8,25 +8,31 @@
     <link href="../CSS/media-datphong.css" rel="stylesheet" media="screen and (max-width:768px)"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_green.css">
+    <link href="../CSS/footer.css" rel="stylesheet"/>
+    <link href="../CSS/header.css" rel="stylesheet"/>
     <title>Document</title>
 </head>
 <body>
     <div id="top"></div>
-    <a href="#top" class="Gotop"><i class="fa-solid fa-arrow-up"></i></a>
+    <div class="Gotop">
+        <a href="mailto:reservation@anamandara-resort.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="lienhe.html"><i class="fa-solid fa-phone"></i></a>
+        <span><a href="#top"><i class="fa-solid fa-arrow-up"></i></a></span>
+    </div>
     <header id="background">
-        <script src="..//JAVACRIP/main1.js"></script>
+        <script src="../JAVACRIP/main1.js"></script>
         <div class="header">
-            <div class="flex wrap   tmp">
+            <div class="flex tmp">
                 <ul class="menu1">
                     <li class="sub">
-                        <div><a id="a1" href="#"><i class="fa-solid fa-bars"></i></a></div>
+                        <div><a id="a1" href="#"><i id="icontmenu" class="fas fa-bars"></i></a></div>
                         <ul class="submenu">
-                            <li><a href="..//index.html">Trang Chủ</a></li>
+                            <li><a href="../index.html">Trang Chủ</a></li>
                             <li><a href="#gioithieu">Giới Thiệu</a></li>
                             <li><a href="phongnghi.html">Phòng Nghĩ</a></li>
                             <li><a href="#">Ẩm Thực</a></li>
-                            <li><a href="../HTML/qdkn.html">Quy Định Khu Nghĩ</a></li>
-                            <li><a href="#">Liên Hệ</a></li>
+                            <li><a href="qdkn.html">Quy Định Khu Nghĩ</a></li>
+                            <li><a href="lienhe.html">Liên Hệ</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -36,10 +42,16 @@
         </div>
 
         <div id="div2">
-            <p id="pn">PHÒNG NGHĨ</p>
-            <!-- <p id="qdkn2"><a href="#qdknn">Chi Tiết<i class="fa-solid fa-arrow-right"></i></a></p> -->
+            <p id="p1">TRÃI NGHIỆM KÌ NGHĨ DƯỠNG RIÊNG TƯ TẠI NHÀ</p>
+            <p id="p2">NƠI LƯU TRỮ NÉT PHÁP XƯA ĐẦY TINH TẾ</p>
+            <p id="p3"><button id="button1"><a href="#"><i class="fa-regular fa-circle-play"></i></a></button></p>
+            <div id="video1" class="hidden">
+                <iframe width="853" height="480" src="https://www.youtube.com/embed/lm7NUPhPZQw" title="&quot;Experience Luxury at Ana Mandara Villas Dalat Resort &amp; Spa&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </div>
         <script src="../JAVACRIP/main2.js"></script>
+        <script src="../JAVACRIP/main3.js"></script>
+        <script src="../JAVACRIP/main4.js"></script>
     </header>
     <main class="datphongs">
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
@@ -87,7 +99,23 @@
             dateFormat: "d-m-Y",
         });
     </script>
-    <foot>
-    </foot>
+    <footer>
+        <div id="face">
+            <a id="face1" href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a id="tt" href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a id="ytb" href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        
+        <div class="footer1">
+            <div>
+                <p><i class="fa-solid fa-location-dot"></i><a target="_blank" href="https://maps.app.goo.gl/e3LeoBhKr5aV1YHy6">Đường Lê Lai, P.5, Đà Lạt, tỉnh Lâm Đồng , Việt Nam</a></p>
+                <p><i class="fa-solid fa-phone"></i><a href="tel:02633555888">02633 555 888</a></p>
+                <p><i class="fa-solid fa-pen"></i><a href="mailto:reservation@anamandara-resort.com">reservation@anamandara-resort.com</a></p>
+            </div>
+            <div>
+                <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3903.439485779722!2d108.4187291!3d11.9440442!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31716cd40cc0684b%3A0x6b9892057c05b737!2sAna%20Mandara%20Villas%20Dalat%20Resort%20%26%20Spa!5e0!3m2!1svi!2s!4v1724479060548!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

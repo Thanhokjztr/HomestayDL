@@ -28,8 +28,9 @@ main > p{
     width: 100%;
     width: 400px;
     margin-top: 4rem;
-    margin: 0;
+    margin: auto;
     padding: 0;
+
 }
 
 #gioithieu{
@@ -59,7 +60,7 @@ main > p{
 }
 
 .left{
-    width: 90%;
+    width: 100%;
     border-right: none;
     border-bottom: solid 3px;
 }
