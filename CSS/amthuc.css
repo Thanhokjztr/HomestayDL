@@ -67,6 +67,7 @@ main {
 .mons{
     position: relative;
     margin: 0.2rem;
+    overflow: hidden;
 }
 
 .mons::before{
@@ -97,7 +98,6 @@ main {
     top:55%;
     left: 30%;
     right: 0%;
-    transition: 0.4s;
 }
 
 .mons:hover .chons{
