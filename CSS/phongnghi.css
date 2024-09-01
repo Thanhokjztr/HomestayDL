@@ -153,31 +153,3 @@ main > div{
 .dat:hover::before{
     left: 0%;
 }
-
-
-@media (max-width: 500px) {
-    ul.submenu li a {
-        font-size: 20px;
-    }
-
-    #a1 {
-        font-size: 150%;
-    }
-
-    .tmp #a2 {
-        font-size: 150%;
-    }
-
-    #p1 {
-        font-size: 20px;
-        margin-top: 50%;
-    }
-
-    #p2 {
-        font-size: 14px;
-    }
-
-    #button1 {
-        font-size: 30px;
-    }
-}
