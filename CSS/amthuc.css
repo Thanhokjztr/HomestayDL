@@ -180,3 +180,35 @@ main {
 #abc{
     margin-bottom: 3rem;
 }
+
+@media (max-width: 500px) {
+    .sec2 {
+        flex-direction: column;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    section.sec2 div {
+        width: 100%;
+    }
+
+    #ttat {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sec2 {
+        flex-direction: column;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    section.sec2 div {
+        width: 100%;
+    }
+
+    #ttat {
+        font-size: 16px;
+    }
+}
