@@ -8,10 +8,12 @@
         <meta http-equiv="refresh" content="1800"/>
         <title>Khu Nghĩ Dưỡng Ana Mandara - Đà Lạt</title>
         <link rel="shortcut icon" href="../IMAGES/Logo.png">
-        <link rel="stylesheet" href="..//CSS/main.css">
+        <link rel="stylesheet" href="../CSS/header.css">
+        <link rel="stylesheet" href="../CSS/footer.css">
         <!-- <link rel="stylesheet" href="../CSS/qdkn.css"> -->
          <link rel="stylesheet" href="../CSS/amthuc.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+         <link href="../CSS/media-amthuc.css" rel="stylesheet" media="screen and (max-width:768px)"/>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
         <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Itim|Lobster|Montserrat:500|Noto+Serif|Nunito|Patrick+Hand|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto+Slab|Saira" rel="stylesheet">
     </head>
     
@@ -34,23 +36,28 @@
                             <li><a href="../index.html/#gioithieu">Giới Thiệu</a></li>
                             <li><a href="../HTML/phongnghi.html">Phòng Nghĩ</a></li>
                             <li><a href="#">Ẩm Thực</a></li>
-                            <li><a href="../HTML/qdkn.html">Quy Định Khu Nghĩ</a></li>
-                            <li><a href="../HTML/lienhe.html">Liên Hệ</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div><img id="img1" src="../IMAGES/Logo.png" alt="anamadara"></div>
-                    <div><a id="a2" href="#">Đặt Ngay</a></div>
-                </div>
+                            <li><a href="qdkn.html">Quy Định Khu Nghĩ</a></li>
+                            <li><a href="lienhe.html">Liên Hệ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div><img id="img1" src="../IMAGES/Logo.png" alt="anamadara"></div>
+                <div><a id="a2" href="datphong.html">Đặt Ngay</a></div>
             </div>
+        </div>
 
-            <div id="div2">
-                <p id="tdamthuc">PHONG VỊ TINH HOA</p>
-                <!-- <p id="qdkn2"><a href="#qdknn">Chi Tiết<i class="fa-solid fa-arrow-right"></i></a></p> -->
+        <div id="div2">
+            <p id="p1">TRÃI NGHIỆM KÌ NGHĨ DƯỠNG RIÊNG TƯ TẠI NHÀ</p>
+            <p id="p2">NƠI LƯU TRỮ NÉT PHÁP XƯA ĐẦY TINH TẾ</p>
+            <p id="p3"><button id="button1"><a href="#"><i class="fa-regular fa-circle-play"></i></a></button></p>
+            <div id="video1" class="hidden">
+                <iframe width="853" height="480" src="https://www.youtube.com/embed/lm7NUPhPZQw" title="&quot;Experience Luxury at Ana Mandara Villas Dalat Resort &amp; Spa&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <script src="../JAVACRIP/main2.js"></script>
-            <script src="../JAVACRIP/main4.js"></script>
-        </header>
+        </div>
+        <script src="../JAVACRIP/main2.js"></script>
+        <script src="../JAVACRIP/main3.js"></script>
+        <script src="../JAVACRIP/main4.js"></script>
+    </header>
         <main>
             <section>
                 <div id="linkchi">
@@ -107,7 +114,6 @@
     </body>
 
     <footer>
-
         <div id="face">
             <a id="face1" href="#"><i class="fa-brands fa-facebook"></i></a>
             <a id="tt" href="#"><i class="fa-brands fa-tiktok"></i></a>
@@ -117,12 +123,12 @@
         <div class="footer1">
             <div>
                 <p><i class="fa-solid fa-location-dot"></i><a target="_blank" href="https://maps.app.goo.gl/e3LeoBhKr5aV1YHy6">Đường Lê Lai, P.5, Đà Lạt, tỉnh Lâm Đồng , Việt Nam</a></p>
-                <p><i class="fa-solid fa-phone"></i><a href="../HTML/lienhe.html">02633 555 888</a></p>
+                <p><i class="fa-solid fa-phone"></i><a href="tel:02633555888">02633 555 888</a></p>
                 <p><i class="fa-solid fa-pen"></i><a href="mailto:reservation@anamandara-resort.com">reservation@anamandara-resort.com</a></p>
             </div>
             <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3903.439485779722!2d108.4187291!3d11.9440442!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31716cd40cc0684b%3A0x6b9892057c05b737!2sAna%20Mandara%20Villas%20Dalat%20Resort%20%26%20Spa!5e0!3m2!1svi!2s!4v1724479060548!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3903.439485779722!2d108.4187291!3d11.9440442!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31716cd40cc0684b%3A0x6b9892057c05b737!2sAna%20Mandara%20Villas%20Dalat%20Resort%20%26%20Spa!5e0!3m2!1svi!2s!4v1724479060548!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-    </footer>
+    </footer>  
 </html>

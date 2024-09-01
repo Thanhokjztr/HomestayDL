@@ -1,3 +1,9 @@
+.flex1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #tdamthuc {
     font-size: 50px;
     height: 100%;
@@ -41,15 +47,11 @@ main {
     margin-top: 2rem;
 }
 
-#umg3{
-    width: 800px;
-}
-
 #ttat {
     font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: lightslategray;
-    margin-right: 10%;
+    margin-right: 5%;
 }
 
 #h2at2 {

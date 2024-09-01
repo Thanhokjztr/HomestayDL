@@ -1,0 +1,43 @@
+.flex1{
+    flex-wrap: wrap;
+}
+
+.sec2{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.left{
+    width: 100%;
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.right{
+    width: 100%;
+    margin-top: 1%;
+    margin-left: 0%;
+    margin-right: 0%;
+    display: flex;
+    justify-content: center;
+}
+
+#beptruong{
+    width: 400px;
+}
+
+#mo{
+    font-size: 50px;
+    text-align: center;
+}
+
+#gio{
+    margin: 0%; 
+    padding: 0.5rem;
+    border-left: none;
+    border-top: 2px solid black;
+    font-size: 20px;
+    text-align: center;
+}
