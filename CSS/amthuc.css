@@ -60,3 +60,123 @@ main {
     font-family: 'Roboto Mono', monospace;
 }
 
+.mon{
+    width: 450px;
+}
+
+.mons{
+    position: relative;
+    margin: 0.2rem;
+    overflow: hidden;
+}
+
+.mons::before{
+    transition: 0.4s;
+    position: absolute;
+    content: "";
+    width: 90%;
+    height: 90%;
+    top:5%;
+    bottom:5%;
+    right: 5%;
+    left:5%;
+    background-color: rgba(92, 101, 93, 0.5);
+}
+
+.chons{
+    transition: 0.4s;
+    position: absolute;
+    top:55%;
+    left: 30%;
+    right: 0%;
+}
+
+.chon{
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-weight: bolder;
+    top:55%;
+    left: 30%;
+    right: 0%;
+}
+
+.mons:hover .chons{
+    top:35%
+}
+
+.mons:hover .xem{
+    display: block;
+}
+
+.xem:hover{
+    background-color: rgba(12, 71, 19, 0.5);
+}
+
+.xem{
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    position: absolute;
+    top:55%;
+    left: 10%;
+    padding: 1rem;
+    margin-top: 3rem;
+    display: none;
+    transition: 0.5s;
+    border: 2px solid rgba(12, 71, 19, 0.5);
+}
+
+.mons:hover::before{
+    background-color: rgba(92, 101, 93, 0.8);;
+}
+
+.left{
+    width: 50%;
+    margin-top: 5%;
+    margin-right: 1%;
+    margin-left: 5%;
+
+}
+
+.right{
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 1%;
+    margin-right: 5%;
+}
+
+#beptruong{
+    width: 800px;
+}
+
+#gap{
+    font-size: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+#ten{
+    font-size: 28px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3rem;
+}
+
+.left > span{
+    font-size: 20px;
+}
+
+#mo{
+    font-size: 50px;
+    text-align: center;
+}
+
+#gio{
+    margin: 0%; 
+    padding: 0.5rem;
+    border-left: 2px solid black;
+    font-size: 20px;
+}
+
+#abc{
+    margin-bottom: 3rem;
+}
