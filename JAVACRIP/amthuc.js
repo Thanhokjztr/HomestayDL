@@ -1,4 +1,4 @@
-const images = [
+const images1 = [
     '../IMAGES/Amthuc.webp',
     '..//IMAGES/Amthuc2.webp',
     '..//IMAGES/Amthuc3.webp'
@@ -8,7 +8,7 @@ let tmp = 0;
 const Hinhnen = document.getElementById('background');
 
 function Thaydoinen() {
-    Hinhnen.style.backgroundImage = `url(${images[tmp]})`;
+    Hinhnen.style.backgroundImage = `url(${images1[tmp]})`;
     tmp = tmp + 1;
     if(tmp===3)
         tmp=0;
@@ -21,3 +21,4 @@ setInterval(Thaydoinen, 3000);
 Thaydoinen();
 
 // Hình nền
+
