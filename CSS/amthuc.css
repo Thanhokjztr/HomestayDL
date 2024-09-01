@@ -211,4 +211,8 @@ main {
     #ttat {
         font-size: 16px;
     }
+
+    #p1 {
+        padding-top: 40%;
+    }
 }
