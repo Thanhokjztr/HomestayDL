@@ -48,3 +48,40 @@ main > h1{
     position: relative;
     color: #e4e9ef;
 }
+
+ul.submenu li a {
+    font-size: 25px;
+}
+
+#a1 {
+    font-size: 180%;
+}
+
+.tmp #a2 {
+    font-size: 180%;
+}
+
+ul.submenu li a {
+    font-size: 20px;
+}
+
+#a1 {
+    font-size: 150%;
+}
+
+.tmp #a2 {
+    font-size: 150%;
+}
+
+#p1 {
+    font-size: 20px;
+    margin-top: 50%;
+}
+
+#p2 {
+    font-size: 14px;
+}
+
+#button1 {
+    font-size: 30px;
+}

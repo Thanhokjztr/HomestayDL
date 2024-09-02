@@ -180,3 +180,63 @@ main {
 #abc{
     margin-bottom: 3rem;
 }
+
+@media (max-width: 500px) {
+    ul.submenu li a {
+        font-size: 20px;
+    }
+
+    #a1 {
+        font-size: 150%;
+    }
+
+    .tmp #a2 {
+        font-size: 150%;
+    }
+
+    .sec2 {
+        flex-direction: column;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    section.sec2 div {
+        width: 100%;
+    }
+
+    #ttat {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    ul.submenu li a {
+        font-size: 20px;
+    }
+
+    #a1 {
+        font-size: 150%;
+    }
+
+    .tmp #a2 {
+        font-size: 150%;
+    }
+    
+    .sec2 {
+        flex-direction: column;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    section.sec2 div {
+        width: 100%;
+    }
+
+    #ttat {
+        font-size: 16px;
+    }
+
+    #p1 {
+        padding-top: 40%;
+    }
+}
